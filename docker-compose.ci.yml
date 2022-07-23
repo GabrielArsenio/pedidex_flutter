@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+
+  flutter:
+    image: cirrusci/flutter:3.0.5
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+
+# docker-compose -f docker-compose.ci.yml run --workdir /app flutter flutter build apk
+
