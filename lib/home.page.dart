@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pedidex_flutter/page/product_list.page.dart';
+import 'package:pedidex_flutter/components/menu.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,19 +15,6 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text("Pedidex - Flutter"),
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              ListTile(
-                title: const Text("Produtos", style: TextStyle(fontSize: 16)),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const ProductListPage()));
-                },
-              )
-            ],
-          ),
-        ));
+        drawer: const MenuWidget());
   }
 }
